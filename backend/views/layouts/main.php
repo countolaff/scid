@@ -25,14 +25,15 @@ AppAsset::register($this);
     <div class="wrap">
         <?php
             NavBar::begin([
-                'brandLabel' => 'Praga Insumos',
+                //'brandLabel' => 'Praga Insumos',
+                'brandLabel' => '<img src= "/scid/uploads/company/pi.jpg" class="img-responsive" width="34px">',
                 'brandUrl' => Yii::$app->homeUrl,
                 'options' => [
                     'class' => 'navbar-inverse navbar-fixed-top',
                 ],
             ]);
             $menuItems = [
-                ['label' => 'Home', 'url' => ['/site/index']],
+                ['label' => 'Inicio', 'url' => ['/site/index']],
             ];
             if (Yii::$app->user->isGuest) {
                 $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
@@ -66,7 +67,7 @@ AppAsset::register($this);
 
     <footer class="footer">
         <div class="container">
-        <p class="pull-left">&copy; Count'stech<?= date('Y') ?></p>
+        <p class="pull-left">&copy; Count'stech - <?= date('Y') ?></p>
         </div>
     </footer>
 

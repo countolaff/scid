@@ -3,9 +3,15 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use yii\helpers\ArrayHelper;
+use yii\bootstrap\Modal;
+use yii\helpers\Url;
+
 use backend\models\User;
 use backend\models\Products;
+use backend\models\Unitsmeasures;
+
 use kartik\widgets\DatePicker;
+use kartik\widgets\FileInput;
 
 /* @var $this yii\web\View */
 /* @var $model backend\models\Products */
@@ -14,7 +20,7 @@ use kartik\widgets\DatePicker;
 
 <div class="products-form">
 
-    <?php $form = ActiveForm::begin(); ?>
+    <?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]); ?>
 
     <?= $form->field($model, 'idProduct')->textInput()->hiddenInput() ->label(false); ?>
     
@@ -32,11 +38,21 @@ use kartik\widgets\DatePicker;
     <?= $form->field($model, 'remainingAmount')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model,'idUnit')->dropDownList(
-            ArrayHelper::map(Products::find()->all(),'idUnit','idUnit'),
-            ['prompt'=>'Seleccione la unidad de medida del producto']
+            ArrayHelper::map(Unitsmeasures::find()->all(),'idUnit','idUnit'),
+            [
+                'prompt'=>'Seleccione la unidad de medida',
+                'onchange'=>'
+                    $.post(
+                        "index.php?r=products/get-information-units-measures&id="+$(this).val(),function(data){
+                            var result = JSON.parse(data);
+                            $("#products-nameunit").val(result["name"]);
+                        }
+                    );
+                '
+            ]
     )?>
 
-    <?= $form->field($model, 'nameUnit')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'nameUnit')->textInput(['maxlength' => true, 'readonly' => true]) ?>
 
     <?= $form->field($model, 'price')->textInput(['maxlength' => true]) ?>
 
@@ -67,10 +83,18 @@ use kartik\widgets\DatePicker;
             ]
         ]);
     ?>
+    <br>
+    <?= $form->field($model, 'file')->fileInput() ?>
 
-    <?= $form->field($model, 'taxes')->dropDownList(['1' => 'Incluido', '0' => 'No incluido']); ?>
-    
-    <div class="form-group">
+    <?= Html::img($model->image,
+        [
+            'width'=>'200px',
+            //'height'=>'402',
+        ]
+    );?>
+
+    <br>
+    <div class="form-group"><br>
         <?= Html::submitButton($model->isNewRecord ? Yii::t('app', 'Create') : Yii::t('app', 'Update'), ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>
 

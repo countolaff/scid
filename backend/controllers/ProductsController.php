@@ -102,11 +102,19 @@ class ProductsController extends Controller
 
         if ($model->load(Yii::$app->request->post())) 
         {   
-            $root = preg_split("'/'", Yii::getAlias('@web'));
+            //have to validate if the user don't need to update de image
+
+
+            $root = preg_split("'/'", Yii::getAlias('@web')); //devide the dir of images in a array
 
             $model->file = UploadedFile::getInstance($model,'file');
-            $model->file->saveAs(Yii::getAlias('@images') .'/uploads/'. $model->file->baseName . '.' . $model->file->extension);
-            $model->image = '/'.$root[1] .'/uploads/'. $model->file->baseName . '.' . $model->file->extension;
+
+            if(isset($model->file))
+            {
+                $model->file->saveAs(Yii::getAlias('@images') .'/uploads/'. $model->file->baseName . '.' . $model->file->extension);
+                $model->image = '/'.$root[1] .'/uploads/'. $model->file->baseName . '.' . $model->file->extension;                
+            }
+
             $model->save();
 
             return $this->redirect(['view', 'id' => $model->idProduct]);

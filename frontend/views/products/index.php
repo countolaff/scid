@@ -22,21 +22,30 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
 
             'idProduct',
-            'idUser',
+            //'idUser',
             'name',
             'description',
-            'quantityPurchased',
-            // 'amountSold',
-            // 'remainingAmount',
+            //'quantityPurchased',
+             'amountSold',
+             'remainingAmount',
             // 'idUnit',
             // 'nameUnit',
             // 'price',
             // 'created_at',
             // 'updated_at',
             // 'taxes',
+            [
+                'attribute' => 'image',
+                'format' => 'html',
+                'label' => 'Image',
+                'value' => function ($data) 
+                {
+                    return Html::img($data['image'],['width' => '60px']);
+                },
+            ],
 
             ['class' => 'yii\grid\ActionColumn',
-                         'template' => '{view}'
+             'template' => '{view}'
             ],
         ],
     ]); ?>

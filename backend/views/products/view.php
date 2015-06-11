@@ -27,7 +27,8 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?= DetailView::widget([
         'model' => $model,
-        'attributes' => [
+        'attributes' => 
+        [
             'idProduct',
             'idUser',
             'name',
@@ -41,7 +42,11 @@ $this->params['breadcrumbs'][] = $this->title;
             'created_at',
             'updated_at',
             'taxes',
- 
+            [
+                'attribute'=>'Image',
+                'value'=>$model->image,
+                'format' => ['image',['width'=>'200','height'=>'200']],
+            ],
         ],
     ]) ?>
 

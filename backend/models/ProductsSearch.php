@@ -67,11 +67,13 @@ class ProductsSearch extends Products
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
             'taxes' => $this->taxes,
+            'image' => $this->image,
         ]);
 
         $query->andFilterWhere(['like', 'name', $this->name])
             ->andFilterWhere(['like', 'description', $this->description])
-            ->andFilterWhere(['like', 'nameUnit', $this->nameUnit]);
+            ->andFilterWhere(['like', 'nameUnit', $this->nameUnit])
+            ->andFilterWhere(['like', 'image', $this->image]);
 
         return $dataProvider;
     }

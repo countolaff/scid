@@ -38,6 +38,16 @@ $this->params['breadcrumbs'][] = $this->title;
             // 'created_at',
             // 'updated_at',
             // 'taxes',
+            [
+                'attribute' => 'image',
+                'format' => 'html',
+                'label' => 'Image',
+                'value' => function ($data) 
+                {
+                    return Html::img($data['image'],['width' => '60px']);
+                },
+            ],
+
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

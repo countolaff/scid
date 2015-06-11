@@ -88,8 +88,8 @@ use kartik\widgets\FileInput;
 
     <?= Html::img($model->image,
         [
-            'width'=>'402',
-            'height'=>'402',
+            'width'=>'200px',
+            //'height'=>'402',
         ]
     );?>
 
