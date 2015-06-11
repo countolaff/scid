@@ -1,3 +1,29 @@
+
+SCID: (System for Control of Inventory)
+
+This application is on Yii2 Framework and a lot’s of Krajee goodies.
+
+Is designe for small business for control the orders and shippins of
+the products on sale.
+
+I use krajee's goodies for the GridView, the datepicker, and more.
+
+The backend:
+It was made for the manager of the business, in here you can control everything:
+
+* Units of measure us on packing
+* Freights
+* Products
+* Users
+* Parameters
+
+The frontend:
+It was made only for the costumer, in here you only can order the products and see the state of the shippments.
+
+I use a FIFO to consume the inventory.
+
+For taxes and units it's on construction.
+
 Yii 2 Advanced Project Template
 ===============================
 
@@ -49,4 +75,5 @@ vendor/                  contains dependent 3rd-party packages
 environments/            contains environment-based overrides
 tests                    contains various tests for the advanced application
     codeception/         contains tests developed with Codeception PHP Testing Framework
+uploads/                 contains the images used for the products
 ```
