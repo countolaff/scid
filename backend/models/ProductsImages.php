@@ -44,10 +44,10 @@ class ProductsImages extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'idImage' => Yii::t('frontend', 'Id Image'),
-            'idProduct' => Yii::t('frontend', 'Id Product'),
-            'image' => Yii::t('frontend', 'Image'),
-            'avatar' => Yii::t('frontend', 'Avatar'),
+            'idImage' => Yii::t('backend', 'Id Image'),
+            'idProduct' => Yii::t('backend', 'Id Product'),
+            'image' => Yii::t('backend', 'Image'),
+            'avatar' => Yii::t('backend', 'Avatar'),
         ];
     }
 

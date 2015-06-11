@@ -5,12 +5,12 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model backend\models\Packagescontrol */
 
-$this->title = Yii::t('app', 'Update {modelClass}: ', [
+$this->title = Yii::t('backend', 'Update {modelClass}: ', [
     'modelClass' => 'Packagescontrol',
 ]) . ' ' . $model->idPackage;
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Packagescontrols'), 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => Yii::t('backend', 'Packagescontrols'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->idPackage, 'url' => ['view', 'id' => $model->idPackage]];
-$this->params['breadcrumbs'][] = Yii::t('app', 'Update');
+$this->params['breadcrumbs'][] = Yii::t('backend', 'Update');
 ?>
 <div class="packagescontrol-update">
 

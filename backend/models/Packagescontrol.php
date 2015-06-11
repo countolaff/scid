@@ -51,17 +51,17 @@ class Packagescontrol extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'idPackage' => Yii::t('app', 'Id Package'),
-            'idUser' => Yii::t('app', 'Id User'),
-            'idFreight' => Yii::t('app', 'Id Freight'),
-            'idOrder' => Yii::t('app', 'Id Order'),
-            'nameName' => Yii::t('app', 'Name'),
-            'description' => Yii::t('app', 'Description'),
-            'created_at' => Yii::t('app', 'Created At'),
-            'updated_at' => Yii::t('app', 'Updated At'),
-            'packageState' => Yii::t('app', 'Package State'),
-            'nameState' => Yii::t('app', 'State'),
-            'observations' => Yii::t('app', 'Observations'),
+            'idPackage' => Yii::t('backend', 'Id Package'),
+            'idUser' => Yii::t('backend', 'Id User'),
+            'idFreight' => Yii::t('backend', 'Id Freight'),
+            'idOrder' => Yii::t('backend', 'Id Order'),
+            'nameName' => Yii::t('backend', 'Name'),
+            'description' => Yii::t('backend', 'Description'),
+            'created_at' => Yii::t('backend', 'Created At'),
+            'updated_at' => Yii::t('backend', 'Updated At'),
+            'packageState' => Yii::t('backend', 'Package State'),
+            'nameState' => Yii::t('backend', 'State'),
+            'observations' => Yii::t('backend', 'Observations'),
         ];
     }
 

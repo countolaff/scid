@@ -63,20 +63,20 @@ class Products extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'idProduct' => Yii::t('app', 'Id Product'),
-            'idUser' => Yii::t('app', 'Id User'),
-            'name' => Yii::t('app', 'Name'),
-            'description' => Yii::t('app', 'Description'),
-            'quantityPurchased' => Yii::t('app', 'Quantity Purchased'),
-            'amountSold' => Yii::t('app', 'Amount Sold'),
-            'remainingAmount' => Yii::t('app', 'Remaining Amount'),
-            'idUnit' => Yii::t('app', 'Id Unit'),
-            'nameUnit' => Yii::t('app', 'Name Unit'),
-            'price' => Yii::t('app', 'Price'),
-            'created_at' => Yii::t('app', 'Created At'),
-            'updated_at' => Yii::t('app', 'Updated At'),
-            'taxes' => Yii::t('app', 'Taxes'),
-            'file' => Yii::t('app', 'Image'),
+            'idProduct' => Yii::t('backend', 'Id Product'),
+            'idUser' => Yii::t('backend', 'Id User'),
+            'name' => Yii::t('backend', 'Name'),
+            'description' => Yii::t('backend', 'Description'),
+            'quantityPurchased' => Yii::t('backend', 'Quantity Purchased'),
+            'amountSold' => Yii::t('backend', 'Amount Sold'),
+            'remainingAmount' => Yii::t('backend', 'Remaining Amount'),
+            'idUnit' => Yii::t('backend', 'Id Unit'),
+            'nameUnit' => Yii::t('backend', 'Name Unit'),
+            'price' => Yii::t('backend', 'Price'),
+            'created_at' => Yii::t('backend', 'Created At'),
+            'updated_at' => Yii::t('backend', 'Updated At'),
+            'taxes' => Yii::t('backend', 'Taxes'),
+            'file' => Yii::t('backend', 'Image'),
         ];
     }
 

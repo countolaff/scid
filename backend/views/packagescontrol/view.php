@@ -7,7 +7,7 @@ use yii\widgets\DetailView;
 /* @var $model backend\models\Packagescontrol */
 
 $this->title = $model->idPackage;
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Packagescontrols'), 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => Yii::t('backend', 'Packagescontrols'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="packagescontrol-view">
@@ -15,11 +15,11 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a(Yii::t('app', 'Update'), ['update', 'id' => $model->idPackage], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a(Yii::t('app', 'Delete'), ['delete', 'id' => $model->idPackage], [
+        <?= Html::a(Yii::t('backend', 'Update'), ['update', 'id' => $model->idPackage], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a(Yii::t('backend', 'Delete'), ['delete', 'id' => $model->idPackage], [
             'class' => 'btn btn-danger',
             'data' => [
-                'confirm' => Yii::t('app', 'Are you sure you want to delete this item?'),
+                'confirm' => Yii::t('backend', 'Are you sure you want to delete this item?'),
                 'method' => 'post',
             ],
         ]) ?>

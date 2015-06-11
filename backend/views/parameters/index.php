@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel backend\models\ParametersSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = Yii::t('frontend', 'Parameters');
+$this->title = Yii::t('backend', 'Parameters');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="parameters-index">
@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a(Yii::t('frontend', 'Create Parameters'), ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a(Yii::t('backend', 'Create Parameters'), ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?= GridView::widget([

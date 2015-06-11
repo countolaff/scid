@@ -7,7 +7,7 @@ use yii\widgets\DetailView;
 /* @var $model backend\models\Parameters */
 
 $this->title = $model->name;
-$this->params['breadcrumbs'][] = ['label' => Yii::t('frontend', 'Parameters'), 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => Yii::t('backend', 'Parameters'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="parameters-view">
@@ -15,11 +15,11 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a(Yii::t('frontend', 'Update'), ['update', 'id' => $model->idParameter], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a(Yii::t('frontend', 'Delete'), ['delete', 'id' => $model->idParameter], [
+        <?= Html::a(Yii::t('backend', 'Update'), ['update', 'id' => $model->idParameter], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a(Yii::t('backend', 'Delete'), ['delete', 'id' => $model->idParameter], [
             'class' => 'btn btn-danger',
             'data' => [
-                'confirm' => Yii::t('frontend', 'Are you sure you want to delete this item?'),
+                'confirm' => Yii::t('backend', 'Are you sure you want to delete this item?'),
                 'method' => 'post',
             ],
         ]) ?>

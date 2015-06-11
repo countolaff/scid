@@ -6,8 +6,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model backend\models\UnitsMeasures */
 
-$this->title = Yii::t('app', 'Create Units Measures');
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Units Measures'), 'url' => ['index']];
+$this->title = Yii::t('backend', 'Create Units Measures');
+$this->params['breadcrumbs'][] = ['label' => Yii::t('backend', 'Units Measures'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="units-measures-create">

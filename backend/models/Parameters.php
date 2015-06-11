@@ -47,14 +47,14 @@ class Parameters extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'idParameter' => Yii::t('frontend', 'Id Parameter'),
-            'idUser' => Yii::t('frontend', 'Id User'),
-            'name' => Yii::t('frontend', 'Name'),
-            'description' => Yii::t('frontend', 'Description'),
-            'created_at' => Yii::t('frontend', 'Created At'),
-            'updated_at' => Yii::t('frontend', 'Updated At'),
-            'state' => Yii::t('frontend', 'State'),
-            'parameterCode' => Yii::t('frontend', 'Parameter Code'),
+            'idParameter' => Yii::t('backend', 'Id Parameter'),
+            'idUser' => Yii::t('backend', 'Id User'),
+            'name' => Yii::t('backend', 'Name'),
+            'description' => Yii::t('backend', 'Description'),
+            'created_at' => Yii::t('backend', 'Created At'),
+            'updated_at' => Yii::t('backend', 'Updated At'),
+            'state' => Yii::t('backend', 'State'),
+            'parameterCode' => Yii::t('backend', 'Parameter Code'),
         ];
     }
 

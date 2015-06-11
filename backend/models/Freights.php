@@ -46,13 +46,13 @@ class Freights extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => Yii::t('app', 'Id'),
-            'idUser' => Yii::t('app', 'Id User'),
-            'name' => Yii::t('app', 'Name'),
-            'telephone' => Yii::t('app', 'Telephone'),
-            'Observations' => Yii::t('app', 'Observations'),
-            'created_at' => Yii::t('app', 'Created At'),
-            'state' => Yii::t('app', 'State'),
+            'id' => Yii::t('backend', 'Id'),
+            'idUser' => Yii::t('backend', 'Id User'),
+            'name' => Yii::t('backend', 'Name'),
+            'telephone' => Yii::t('backend', 'Telephone'),
+            'Observations' => Yii::t('backend', 'Observations'),
+            'created_at' => Yii::t('backend', 'Created At'),
+            'state' => Yii::t('backend', 'State'),
         ];
     }
 

@@ -38,7 +38,7 @@ use frontend\models\Detailorders;
     ?>
 
     <?php //$form->field($model, 'date')->textInput(['readonly' => true]) 
-    echo '<label class="control-label">'.Yii::t('app', 'Date Order').'</label>';
+    echo '<label class="control-label">'.Yii::t('frontend', 'Date Order').'</label>';
     echo DatePicker::widget([
             'attribute' => 'date',
             'model' => $model,

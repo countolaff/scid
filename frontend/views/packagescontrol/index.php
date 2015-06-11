@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel backend\models\PackagescontrolSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = Yii::t('app', 'Packagescontrols');
+$this->title = Yii::t('frontend', 'Packagescontrols');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="packagescontrol-index">

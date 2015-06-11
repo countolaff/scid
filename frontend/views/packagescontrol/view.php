@@ -8,7 +8,7 @@ use backend\models\Freight;
 /* @var $model backend\models\Packagescontrol */
 
 $this->title = $model->idPackage;
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Packagescontrols'), 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => Yii::t('frontend', 'Packagescontrols'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="packagescontrol-view">

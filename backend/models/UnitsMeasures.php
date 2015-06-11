@@ -47,14 +47,14 @@ class UnitsMeasures extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'idUnit' => Yii::t('app', 'Id Unit'),
-            'idUser' => Yii::t('app', 'Id User'),
-            'name' => Yii::t('app', 'Name'),
-            'description' => Yii::t('app', 'Description'),
-            'created_at' => Yii::t('app', 'Created_at'),
-            'updated_at' => Yii::t('app', 'Updated_at'),
-            'state' => Yii::t('app', 'State'),
-            'math' => Yii::t('app', 'Math'),
+            'idUnit' => Yii::t('backend', 'Id Unit'),
+            'idUser' => Yii::t('backend', 'Id User'),
+            'name' => Yii::t('backend', 'Name'),
+            'description' => Yii::t('backend', 'Description'),
+            'created_at' => Yii::t('backend', 'Created_at'),
+            'updated_at' => Yii::t('backend', 'Updated_at'),
+            'state' => Yii::t('backend', 'State'),
+            'math' => Yii::t('backend', 'Math'),
         ];
     }
 

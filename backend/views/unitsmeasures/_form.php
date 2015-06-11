@@ -25,7 +25,7 @@ use kartik\widgets\DatePicker;
     <?= $form->field($model, 'description')->textInput(['maxlength' => true]) ?>
 
     <?php //$form->field($model, 'date')->textInput(['readonly' => true]) 
-    echo '<label class="control-label">'.Yii::t('app', 'Created_at').'</label>';
+    echo '<label class="control-label">'.Yii::t('backend', 'Created_at').'</label>';
     echo DatePicker::widget([
             'attribute' => 'created_at',
             'model' => $model,
@@ -39,7 +39,7 @@ use kartik\widgets\DatePicker;
     ?>
  
     <?php //$form->field($model, 'date')->textInput(['readonly' => true]) 
-    echo '<label class="control-label">'.Yii::t('app', 'Updated_at').'</label>';
+    echo '<label class="control-label">'.Yii::t('backend', 'Updated_at').'</label>';
     echo DatePicker::widget([
             'attribute' => 'updated_at',
             'model' => $model,
@@ -56,7 +56,7 @@ use kartik\widgets\DatePicker;
     <?= $form->field($model, 'math')->textInput() ?>
 
     <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? Yii::t('app', 'Create') : Yii::t('app', 'Update'), ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+        <?= Html::submitButton($model->isNewRecord ? Yii::t('backend', 'Create') : Yii::t('backend', 'Update'), ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

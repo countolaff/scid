@@ -57,7 +57,7 @@ use kartik\widgets\FileInput;
     <?= $form->field($model, 'price')->textInput(['maxlength' => true]) ?>
 
     <?php //$form->field($model, 'date')->textInput(['readonly' => true]) 
-    echo '<label class="control-label">'.Yii::t('app', 'created_at').'</label>';
+    echo '<label class="control-label">'.Yii::t('frontend', 'created_at').'</label>';
     echo DatePicker::widget([
             'attribute' => 'created_at',
             'model' => $model,
@@ -71,7 +71,7 @@ use kartik\widgets\FileInput;
     ?>
 
     <?php //$form->field($model, 'date')->textInput(['readonly' => true]) 
-    echo '<label class="control-label">'.Yii::t('app', 'updated_at').'</label>';
+    echo '<label class="control-label">'.Yii::t('frontend', 'updated_at').'</label>';
     echo DatePicker::widget([
             'attribute' => 'updated_at',
             'model' => $model,
@@ -95,7 +95,7 @@ use kartik\widgets\FileInput;
 
     <br>
     <div class="form-group"><br>
-        <?= Html::submitButton($model->isNewRecord ? Yii::t('app', 'Create') : Yii::t('app', 'Update'), ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+        <?= Html::submitButton($model->isNewRecord ? Yii::t('frontend', 'Create') : Yii::t('frontend', 'Update'), ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>
