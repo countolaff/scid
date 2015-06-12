@@ -235,7 +235,10 @@ class OrdersController extends Controller
     {   
         $modelOrders = Orders::findOne($id);
         $modelDetailOrders = new Detailorders();
-        //$modelParameters = Parameters::find()
+        $modelParameters = Parameters::find()
+                ->select('state') // we need only one column
+                ->where('parameterCode = "IVAI"')
+                ->scalar(); // cool, huh?
         //$modelUnitMeasure = Unitsmeasures::find
         //$modelProducts = new Products();
 
@@ -243,6 +246,178 @@ class OrdersController extends Controller
         $dataProvider = $searchModel->search(Yii::$app->request->getQueryParams());
         $dataProvider->query->where('idOrder="'.$id.'"'); 
 
+        if($modelParameters == 1)
+        {   
+            $gridColumns = [
+                // the name column configuration
+                // the checkbox para seleccionar la fila a borrar
+                [
+                    'class' => '\kartik\grid\CheckboxColumn'
+                ],
+                // the idOrder column configuration
+                [
+                    'class' => 'kartik\grid\EditableColumn',
+                    'attribute'=>'idOrder', 
+                    'readonly'=> true,
+                    'editableOptions' => [
+                        'header' => 'idOrder',
+                        'inputType' => Editable::INPUT_SPIN,
+                        'options' => [
+                            'pluginOptions' => ['min'=>0, 'max'=>5000]
+                        ]
+                    ],
+                    'hAlign'=>'right', 
+                    'vAlign'=>'middle',
+                    'width'=>'100px',
+                    //'format'=>['decimal', 2],
+                    'pageSummary' => false
+                ],
+
+                // the idProduct column configuration
+                [
+                    'class' => 'kartik\grid\EditableColumn',
+                    'attribute'=>'idProduct', 
+                    'readonly'=>true,
+                    'editableOptions' => [
+                        'header' => 'idProduct',
+                        'inputType' => Editable::INPUT_SPIN,
+                        'options' => [
+                            'pluginOptions' => ['min'=>0, 'max'=>5000]
+                        ]
+                    ],
+                    'hAlign'=>'right', 
+                    'vAlign'=>'middle',
+                    'width'=>'100px',
+                    //'format'=>['decimal', 2],
+                    'pageSummary' => false
+                ],
+
+                // the productName column configuration
+                [
+                    'class' => 'kartik\grid\EditableColumn',
+                    'attribute'=>'productName', 
+                    'readonly'=> true,
+                    'editableOptions' => [
+                        'header' => 'productName',
+                        'inputType' => Editable::INPUT_SPIN,
+                        'options' => [
+                            'pluginOptions' => ['min'=>0, 'max'=>5000]
+                        ]
+                    ],
+                    'hAlign'=>'right', 
+                    'vAlign'=>'middle',
+                    'width'=>'100px',
+                    //'format'=>['decimal', 2],
+                    'pageSummary' => false
+                ],
+
+                // the observationDetailorder column configuration
+                [
+                    'class' => 'kartik\grid\EditableColumn',
+                    'attribute'=>'observationDetailorder', 
+                    'readonly'=>true,
+                    'editableOptions' => [
+                        'header' => 'observationDetailorder',
+                        'inputType' => Editable::INPUT_TEXT,
+                        'options' => [
+                            'pluginOptions' => ['min'=>0, 'max'=>5000]
+                        ]
+                    ],
+                    'hAlign'=>'left', 
+                    'vAlign'=>'middle',
+                    'width'=>'100px',
+                    //'format'=>['decimal', 2],
+                    'pageSummary' => false
+                ],
+
+                // the quantityPurchased column configuration
+                [
+                    'class' => 'kartik\grid\EditableColumn',
+                    'attribute'=>'quantityPurchased', 
+                    'readonly'=>true,
+                    'editableOptions' => [
+                        'header' => 'quantityPurchased',
+                        'inputType' => Editable::INPUT_SPIN,
+                        'options' => [
+                            'pluginOptions' => ['min'=>0, 'max'=>5000]
+                        ]
+                    ],
+                    'hAlign'=>'right', 
+                    'vAlign'=>'middle',
+                    'width'=>'100px',
+                    'format'=>['decimal', 0],
+                    'pageSummary' => true
+                ],
+
+                // the price column configuration
+                [
+                    'class' => 'kartik\grid\EditableColumn',
+                    'attribute'=>'price', 
+                    'readonly'=>true,
+                    'editableOptions' => [
+                        'header' => 'price',
+                        'inputType' => Editable::INPUT_SPIN,
+                        'options' => [
+                            'pluginOptions' => ['min'=>0, 'max'=>5000]
+                        ]
+                    ],
+                    'hAlign'=>'right', 
+                    'vAlign'=>'middle',
+                    'width'=>'100px',
+                    'format'=>['decimal', 2],
+                    'pageSummary' => false
+                ],  
+
+                //this column is use for get the tax for each item
+                [
+                    'class' => '\kartik\grid\FormulaColumn',
+                    'attribute'=>'Valor IVA',
+                    'format'=>['decimal', 2],
+                    'hAlign'=>'right', 
+                    'vAlign'=>'middle',
+                    'width'=>'100px',
+                    'pageSummary' => false,
+                    'value' => function ($model, $key, $index, $widget) 
+                    {
+                        $p = compact('model', 'key', 'index');
+                        // Write your formula below
+                        
+                        $modelParameterTax = Parameters::find()
+                            ->select('value') // we need only one column
+                            ->where('parameterCode = "IVA" AND state = 1')
+                            ->scalar(); // cool, huh?
+                        //`idOrder`, `idProduct`, `productName`, `quantityPurchased`, `price`, `observationDetailorder`
+
+                        //casting for the variable in the db it's a string
+                        $parameterTax = floatval($modelParameterTax);
+
+                        if(!isset($parameterTax)) $parameterTax = 0; //if the value is null
+
+                        return ($widget->col(5, $p) * $widget->col(6, $p)) * $parameterTax ;
+                    }
+                ],
+
+                //Columna para la multiplicacion por cantidades
+                [
+                    'class' => '\kartik\grid\FormulaColumn',
+                    'attribute'=>'Total',
+                    'format'=>['decimal', 2],
+                    'hAlign'=>'right', 
+                    'vAlign'=>'middle',
+                    'width'=>'100px',
+                    'pageSummary' => true,
+                    'value' => function ($model, $key, $index, $widget) 
+                    {
+                        $p = compact('model', 'key', 'index');
+                        // Write your formula below
+                        return ($widget->col(5, $p) * $widget->col(6, $p)) + $widget->col(7, $p);
+                    }
+                ],
+
+            ];
+        //end columns
+        }else{
+            //this opcion for when the state of the parameter in 0 (off)
             //`idOrder`, `idProduct`, `productName`, `quantityPurchased`, `price`, `observationDetailorder`
             $gridColumns = [
                 // the name column configuration
@@ -380,7 +555,7 @@ class OrdersController extends Controller
                     }
                 ]
             ];
-        //end columns
+        }
 
         if ($modelOrders->state == 1) //if the state of the order is on draft
         {

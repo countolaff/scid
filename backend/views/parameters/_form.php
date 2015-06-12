@@ -55,6 +55,8 @@ use kartik\widgets\DatePicker;
 
     <?= $form->field($model, 'parameterCode')->textInput(['maxlength' => true]) ?>
 
+    <?= $form->field($model, 'value')->textInput(['maxlength' => true]) ?>
+
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? Yii::t('backend', 'Create') : Yii::t('backend', 'Update'), ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>

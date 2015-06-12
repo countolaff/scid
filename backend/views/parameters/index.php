@@ -33,6 +33,7 @@ $this->params['breadcrumbs'][] = $this->title;
             // 'updated_at',
             // 'state',
             // 'parameterCode',
+            // 'value',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

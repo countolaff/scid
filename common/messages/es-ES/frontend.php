@@ -47,4 +47,6 @@ return [
     'Update {modelClass}: ' => 'Actualizar {modelClass}',
     'created_at' => 'Creado en',
     'updated_at' => 'Actualizado en',
+    'About' => 'Acerca de:',
+    'Contact' => 'Contactenos',
 ];

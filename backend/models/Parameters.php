@@ -36,7 +36,7 @@ class Parameters extends \yii\db\ActiveRecord
             [['idParameter', 'idUser', 'state'], 'integer'],
             [['created_at', 'updated_at'], 'safe'],
             [['name', 'parameterCode'], 'string', 'max' => 45],
-            [['description'], 'string', 'max' => 200],
+            [['description','value'], 'string', 'max' => 200],
             [['idParameter'], 'unique']
         ];
     }
@@ -55,6 +55,7 @@ class Parameters extends \yii\db\ActiveRecord
             'updated_at' => Yii::t('backend', 'Updated At'),
             'state' => Yii::t('backend', 'State'),
             'parameterCode' => Yii::t('backend', 'Parameter Code'),
+            'value' => Yii::t('backend', 'Value'),
         ];
     }
 

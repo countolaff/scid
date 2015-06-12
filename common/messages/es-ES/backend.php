@@ -76,4 +76,5 @@ return [
     'Users' => 'Usuario',
     'created_at' => 'Creado en',
     'updated_at' => 'Actualizado en',
+    'Value' => 'Valor',
 ];
