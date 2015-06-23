@@ -67,7 +67,7 @@ AppAsset::register($this);
 
     <footer class="footer">
         <div class="container">
-        <p class="pull-left">&copy; Count'stech - <?= date('Y') ?></p>
+        <p class="pull-left">&copy; Count'sLabs - <?= date('Y') ?></p>
         </div>
     </footer>
 
